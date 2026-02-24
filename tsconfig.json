@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    "target": "es2024",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["es2024"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "removeComments": true,
+    "useUnknownInCatchVariables": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "paths": {
+      "@*": ["./src/*"],
+      "@storage/*": ["./src/storage/*"],
+      "@bot/*": ["./src/bot/*"],
+      "@commands/*": ["./src/bot/commands/*"],
+      "@handlers/*": ["./src/bot/handlers/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@server/*": ["./src/server/*"],
+      "@core/*": ["./src/core/*"],
+      "@services/*": ["./src/services/*"],
+      "@barqueiro/types": ["./src/tipos/index.ts"]
+    }
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["./node_modules", "./test", "./dist"],
+  "ts-node": {
+    "esm": true
+  }
+}

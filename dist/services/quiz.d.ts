@@ -1,0 +1,10 @@
+import type { QuizSession, SquadQuizConfig, UserQuizResult } from "../tipos/index.js";
+export declare function getQuizConfig(guildId: string): Promise<SquadQuizConfig>;
+export declare function setQuizConfig(guildId: string, config: SquadQuizConfig): Promise<boolean>;
+export declare function getQuizSession(userId: string, guildId: string): Promise<QuizSession | null>;
+export declare function saveQuizSession(session: QuizSession): Promise<boolean>;
+export declare function removeQuizSession(userId: string, guildId: string): Promise<boolean>;
+export declare function updateQuizSession(userId: string, guildId: string, updates: Partial<QuizSession>): Promise<boolean>;
+export declare function saveQuizResult(result: UserQuizResult): Promise<boolean>;
+export declare function getQuizResult(userId: string, guildId: string): Promise<UserQuizResult | null>;
+export declare function getGuildQuizResults(guildId: string): Promise<UserQuizResult[]>;

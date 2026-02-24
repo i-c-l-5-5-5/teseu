@@ -1,0 +1,11 @@
+import type { SquadQuizConfig } from "../tipos/index.js";
+export declare function isMemoryStorageMode(): boolean;
+export declare function getConfig(key: string): Promise<string | null>;
+export declare function setConfig(key: string, value: string): Promise<boolean>;
+export declare function removeConfig(key: string): Promise<boolean>;
+export declare function getAllConfig(): Promise<Record<string, string>>;
+export declare function getQuizConfig(guildId: string): Promise<SquadQuizConfig>;
+export declare function setQuizConfig(guildId: string, config: SquadQuizConfig): Promise<boolean>;
+export declare function recordQuizAnswer(userId: string, guildId: string, questionIndex: number, answerIndex: number): boolean;
+export declare function getSquadRoleName(guildId: string, squadType: string): Promise<string>;
+export declare const getQuiz: typeof getQuizConfig;

@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+import { fileURLToPath } from 'node:url';
+import path from 'node:path';
+import fs from 'node:fs/promises';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+(async () => {
+  try {
+    await import(path.join(__dirname, 'index.mjs'));
+  } catch (err) {
+    console.error('Failed to launch license-auditor CLI:', err?.message || err);
+    process.exit(1);
+  }
+})();
+
+// Durante npm install, tenta garantir permissão de execução no bin (fallback)
+const _cliPath = path.join(__dirname, 'index.mjs');
+if (['install', 'postinstall'].includes(process.env.npm_lifecycle_event)) {
+  fs.chmod(_cliPath, 0o755).catch((err) => {
+    console.error(`Falha ao definir permissão de execução em ${_cliPath}:`, err?.message || err);
+  });
+}

@@ -1,0 +1,62 @@
+{
+  "name": "auditor",
+  "version": "0.1.0",
+  "description": "Ferramenta para auditoria e geração de notices e disclaimers de licenças",
+  "type": "module",
+  "main": "src/index.js",
+  "bin": {
+    "auditor": "src/cli/license-auditor"
+  },
+  "files": [
+    "src",
+    "lib",
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "auditor",
+    "scan": "auditor scan",
+    "add": "auditor disclaimer add",
+    "verify": "auditor disclaimer verify",
+    "notice": "auditor notices generate",
+    "diagnosticar": "oraculo diagnosticar",
+    "formatar": "oraculo formatar --write",
+    "lint": "eslint . --ext .js,.mjs"
+  },
+  "keywords": [
+    "licença",
+    "auditoria",
+    "notices",
+    "disclaimer",
+    "open-source"
+  ],
+  "author": "Moralus OSS",
+  "contributors": [
+    {
+      "name": "Contribuidor Exemplo",
+      "email": "contrib@example.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ossmoralus/auditor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ossmoralus/auditor/issues"
+  },
+  "homepage": "https://github.com/ossmoralus/auditor#readme",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.12.0"
+  },
+  "devDependencies": {
+    "spdx-correct": "^3.1.1",
+    "spdx-expression-parse": "^3.0.0"
+  },
+  "dependencies": {
+    "minimatch": "^10.1.1",
+    "oraculo": "file:oraculo-0.3.8.tgz",
+    "auditor": "file:auditor-0.1.0.tgz"
+  }
+}
